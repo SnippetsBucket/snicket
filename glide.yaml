@@ -1,0 +1,6 @@
+package: snicket
+import:
+- package: github.com/labstack/echo
+  subpackages:
+  - engine/standard
+  - middleware

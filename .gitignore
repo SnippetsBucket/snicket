@@ -1,0 +1,11 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+
+# Dependency directory
+node_modules
+vendor
+logs
+
+.DS_Store
