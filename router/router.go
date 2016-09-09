@@ -20,9 +20,11 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 
 func Init() *echo.Echo {
 	t := &Template{
-		templates: template.Must(template.ParseGlob("public/views/*.html")),
+		// templates: template.Must(template.ParseGlob("public/views/*.html")),
+		templates: template.Must(template.ParseGlob("templates/*.html")),
 	}
 	e := echo.New()
+	e.Static("/assets", "public")
 
 	e.Use(mw.Logger())
 	e.Use(mw.Recover())

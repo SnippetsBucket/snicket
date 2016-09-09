@@ -13,5 +13,5 @@ func HomePage() echo.HandlerFunc {
 }
 
 func Hello(c echo.Context) error {
-	return c.Render(http.StatusOK, "hello", "World")
+	return c.Render(http.StatusOK, "hello", "Hello")
 }
