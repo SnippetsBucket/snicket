@@ -1,4 +1,4 @@
-package: snicket
+package: github.com/SnippetsBucket/snicket
 import:
 - package: github.com/Sirupsen/logrus
 - package: github.com/gocraft/dbr
