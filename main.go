@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/labstack/echo/engine/standard"
+	"github.com/SnippetsBucket/snicket/router"
 
-	"snicket/router"
+	"github.com/labstack/echo/engine/standard"
 )
 
 func main() {

@@ -3,8 +3,9 @@ package router
 import (
 	"html/template"
 	"io"
-	"snicket/api"
-	"snicket/handler"
+
+	"github.com/SnippetsBucket/snicket/api"
+	"github.com/SnippetsBucket/snicket/handler"
 
 	"github.com/labstack/echo"
 	mw "github.com/labstack/echo/middleware"
