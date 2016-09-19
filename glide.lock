@@ -1,5 +1,5 @@
-hash: 35c84fc52462c6e623b77ae991dd0d1b81513eaecbc6699d34d0ae786dcc48c3
-updated: 2016-09-18T02:38:18.835876066+09:00
+hash: f73ba7103a96317ffe3abf1ea1bcc402fb04b7a8c78757e3b4f0a445e4f1bc45
+updated: 2016-09-20T01:17:33.682316748+09:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 24c63f56522a87ec5339cc3567883f1039378fdb
@@ -7,6 +7,8 @@ imports:
   version: 0b58b37b664c21f3010e836f1b931e1d0b0b0685
 - name: github.com/gocraft/dbr
   version: 2f5790f739c41bfaae11cb14738a07ac85491193
+  subpackages:
+  - dialect
 - name: github.com/labstack/echo
   version: 862bee4ebd5fdb34323ba86936e8b25fd6753f83
   subpackages:
@@ -28,6 +30,8 @@ imports:
   version: 66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8
 - name: github.com/Sirupsen/logrus
   version: 3ec0642a7fb6488f65b06f9040adc67e3990296a
+- name: github.com/valyala/fasthttp
+  version: 95be7a58499b79d1a42a4e9880fb90645345c021
 - name: github.com/valyala/fasttemplate
   version: 3b874956e03f1636d171bda64b130f9135f42cff
 - name: golang.org/x/net

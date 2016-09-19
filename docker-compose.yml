@@ -8,6 +8,6 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: my-secret-pw
       MYSQL_ROOT_PASSWORD: root
       MYSQL_CHARSET: utf8mb4
-      MYSQL_DATABASE: snicket-db
+      MYSQL_DATABASE: snicket
     ports:
       - 3306:3306

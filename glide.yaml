@@ -3,6 +3,7 @@ import:
 - package: github.com/Sirupsen/logrus
 - package: github.com/gocraft/dbr
 - package: github.com/go-sql-driver/mysql
+- package: "github.com/valyala/fasthttp"
 - package: github.com/labstack/echo
   subpackages:
   - engine/standard
