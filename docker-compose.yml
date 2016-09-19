@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  mysql-server:
+    image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: my-secret-pw
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_DATABASE: snicket-db
+    ports:
+      - 3306:3306

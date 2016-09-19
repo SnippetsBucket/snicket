@@ -37,8 +37,9 @@ func Init() *echo.Echo {
 
 	e.SetRenderer(t)
 
-	e.GET("/", handler.HomePage())
-	e.GET("/hello", handler.Hello)
+	e.GET("/", handler.Home)
+	e.GET("/snippet", handler.Snippet)
+	e.GET("/create", handler.SnippetCreate)
 	v1 := e.Group("/v1/api")
 	{
 		v1.GET("/test", api.TestApi())

@@ -5,3 +5,26 @@ html {
 .nav {
   border-bottom: 1px solid #ccc;
 }
+
+.snippet-head-area {
+  padding: 20px 0;
+  margin-bottom: 30px;
+  background-color: #fafafa;
+}
+
+/*
+ * snippet-create
+ */
+
+.snippet-container {
+  margin-top: 30px;
+}
+
+.snippet-container .snippet-editor {
+  height: 400px;
+  resize: vertical;
+}
+
+.snippet-container .control:not(:last-child) {
+    margin-bottom: 20px;
+}

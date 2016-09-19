@@ -1,0 +1,45 @@
+{{define "snippet"}}
+
+{{ template "header" . }}
+
+<body>
+  {{ template "nav"}}
+
+  <div class="snippet-head-area">
+    <div class="snippet-head-title container">
+      <p class="title is-3">Title title title</p>
+      <p class="subtitle is-5">2016/09/19</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column is-9">
+        <div class="box">
+          <h2>Title title title</h2>
+          <pre><code class="language-scala hljs"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Main</span> {</span>
+                  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span>(</span>args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]) {
+                    println(<span class="hljs-string">"hello !"</span>)
+                  }
+                }
+               </code>
+          </pre>
+        </div>
+      </div>
+      <div class="column is-3">
+        <aside class="menu">
+          <p class="menu-label">
+            Tags
+          </p>
+          <span class="tag is-danger">Scala</span>
+          <span class="tag is-info">Go</span>
+          <span class="tag is-dark">Rust</span>
+          <span class="tag is-warning">JavaScript</span>
+          {{ template "md-index" }}
+        </aside>
+      </div>
+    </div>
+  </div>
+</body>
+
+{{end}}
