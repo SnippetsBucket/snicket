@@ -37,11 +37,15 @@ func Init() *echo.Echo {
 
 	e.SetRenderer(t)
 
+	// view
 	e.GET("/", handler.Home)
 	e.GET("/snippet", handler.Snippet)
 	e.GET("/create", handler.SnippetCreate)
-	v1 := e.Group("/v1/api")
+
+	// api
+	v1 := e.Group("/api/v1")
 	{
+		v1.POST("/snippet/create", api.Create())
 		v1.GET("/test", api.TestApi())
 	}
 	return e

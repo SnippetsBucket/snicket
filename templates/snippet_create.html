@@ -5,29 +5,31 @@
   <div class="container">
     <div class="snippet-container">
       <h3 class="title is-3">Create snippet</h3>
-      <p class="control">
-        <input class="input is-medium" type="text" placeholder="Title input">
-      </p>
-      <div class="tabs is-boxed">
-        <ul>
-          <li class="is-active">
-            <a>
-              <span class="icon is-small"><img src="assets/icon/markdown.svg"></span>
-              <span>Content</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="icon is-small"><i class="fa fa-eye"></i></span>
-              <span>Preview</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="control">
-        <textarea class="textarea snippet-editor" placeholder="snippet description..."></textarea>
-      </div>
-      <a class="button is-success is-medium">Post Snippet</a>
+      <form action="/api/v1/snippet/create" method="POST">
+        <p class="control">
+          <input class="input is-medium" name="snippetTitle" type="text" placeholder="Title input">
+        </p>
+        <div class="tabs is-boxed">
+          <ul>
+            <li class="is-active">
+              <a>
+                <span class="icon is-small"><img src="assets/icon/markdown.svg"></span>
+                <span>Content</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="icon is-small"><i class="fa fa-eye"></i></span>
+                <span>Preview</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="control">
+          <textarea class="textarea snippet-editor" name="snippetContent" placeholder="snippet description..."></textarea>
+        </div>
+        <button type=submit class="button is-success is-medium">Post Snippet</button>
+      </form>
     </div>
   </div>
 </body>
