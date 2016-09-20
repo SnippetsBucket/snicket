@@ -11,3 +11,9 @@ services:
       MYSQL_DATABASE: snicket
     ports:
       - 3306:3306
+    volumes:
+    - mysql57-data:/var/lib/mysql
+
+volumes:
+  mysql57-data:
+    driver: local
