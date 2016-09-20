@@ -5,7 +5,9 @@ import (
 	"io"
 
 	"github.com/SnippetsBucket/snicket/api"
+	"github.com/SnippetsBucket/snicket/db"
 	"github.com/SnippetsBucket/snicket/handler"
+	sbMw "github.com/SnippetsBucket/snicket/middleware"
 
 	"github.com/labstack/echo"
 	mw "github.com/labstack/echo/middleware"
@@ -36,6 +38,9 @@ func Init() *echo.Echo {
 	}))
 
 	e.SetRenderer(t)
+
+	// set custome middleware
+	e.Use(sbMw.TransactionHandler(db.Init()))
 
 	// view
 	e.GET("/", handler.Home)

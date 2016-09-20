@@ -7,11 +7,12 @@ import (
 )
 
 type Snippet struct {
-	SnippetId    int64  `form:"snippet_id"`
-	SnippetTitle string `form:"snippet_title"`
-	SnippetText  string `form:"snippet_text"`
-	CreatedAt    int64  `form:"created_at"`
-	UpdatedAt    int64  `form:"updated_at"`
+	SnippetId    int64  `db:"snippet_id"`
+	SnippetTitle string `db:"snippet_title"`
+	SnippetText  string `db:"snippet_text"`
+	UserId       int64  `db:"user_id"`
+	CreatedAt    int64  `db:"created_at"`
+	UpdatedAt    int64  `db:"updated_at"`
 }
 
 func CreateSnippet(snippetTitle string, snippetText string) *Snippet {
@@ -22,11 +23,20 @@ func CreateSnippet(snippetTitle string, snippetText string) *Snippet {
 	}
 }
 
-func (s *Snippet) Save(tx *dbr.Tx) error {
+func Save(tx *dbr.Tx, snippetTitle string, snippetText string) error {
 	_, err := tx.InsertInto("snippet").
 		Columns("snippet_title", "snippet_text", "created_at").
-		Record(s).
+		Values(snippetTitle, snippetText).
 		Exec()
 
 	return err
 }
+
+// func (s *Snippet) Save(tx *dbr.Tx) error {
+// 	_, err := tx.InsertInto("snippet").
+// 		Columns("snippet_title", "snippet_text", "created_at").
+// 		Record(s).
+// 		Exec()
+
+// 	return err
+// }
