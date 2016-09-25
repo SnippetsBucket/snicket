@@ -1,8 +1,6 @@
 package api
 
 import (
-	"fmt"
-
 	"github.com/Sirupsen/logrus"
 	"github.com/SnippetsBucket/snicket/model"
 	"github.com/gocraft/dbr"
@@ -10,30 +8,21 @@ import (
 	"github.com/valyala/fasthttp"
 )
 
-func TestApi() echo.HandlerFunc {
-	return func(c echo.Context) error {
-		return c.String(fasthttp.StatusCreated, "TestApi page")
-	}
-}
-
 func Create() echo.HandlerFunc {
 	return func(c echo.Context) error {
-		title := c.FormValue("snippetTitle")
-		content := c.FormValue("snippetContent")
 
-		// s := new(model.Snippet)
-		// c.Bind(&s)
+		s := new(model.SnippetJson)
+		if err := c.Bind(s); err != nil {
+			return err
+		}
 
 		tx := c.Get("Tx").(*dbr.Tx)
-		// snippet := model.CreateSnippet(s.SnippetTitle, s.SnippetText)
-		snippet := model.CreateSnippet(title, content)
+		snippet := model.CreateSnippet(s.SnippetTitle, s.SnippetText)
 
-		if err := model.Save(tx, title, content); err != nil {
-			fmt.Println("Save Error")
+		if err := snippet.Save(tx); err != nil {
 			logrus.Debug(err)
-			return echo.NewHTTPError(fasthttp.StatusInternalServerError)
+			return echo.NewHTTPError(fasthttp.StatusInternalServerError, err.Error())
 		}
-		fmt.Println("Json Success")
 
 		return c.JSON(fasthttp.StatusCreated, snippet)
 	}
