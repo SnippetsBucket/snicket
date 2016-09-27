@@ -8,3 +8,4 @@ import:
   subpackages:
   - engine/standard
   - middleware
+- package: github.com/russross/blackfriday

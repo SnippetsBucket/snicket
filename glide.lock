@@ -1,5 +1,5 @@
-hash: f73ba7103a96317ffe3abf1ea1bcc402fb04b7a8c78757e3b4f0a445e4f1bc45
-updated: 2016-09-20T01:17:33.682316748+09:00
+hash: 2258227a2480f0e8ab52833c542abaab3009882c4a9e5c78061cd1692830e015
+updated: 2016-09-28T00:47:34.693479419+09:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 24c63f56522a87ec5339cc3567883f1039378fdb
@@ -9,6 +9,16 @@ imports:
   version: 2f5790f739c41bfaae11cb14738a07ac85491193
   subpackages:
   - dialect
+- name: github.com/klauspost/compress
+  version: d0763f13d86e630f5d3ea9fa848a6ecc68255297
+  subpackages:
+  - flate
+  - gzip
+  - zlib
+- name: github.com/klauspost/cpuid
+  version: 09cded8978dc9e80714c4d85b0322337b0a1e5e0
+- name: github.com/klauspost/crc32
+  version: 19b0b332c9e4516a6370a0456e6182c3b5036720
 - name: github.com/labstack/echo
   version: 862bee4ebd5fdb34323ba86936e8b25fd6753f83
   subpackages:
@@ -28,10 +38,16 @@ imports:
   version: ed8eb9e318d7a84ce5915b495b7d35e0cfe7b5a8
 - name: github.com/mattn/go-isatty
   version: 66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8
+- name: github.com/russross/blackfriday
+  version: 35eb537633d9950afc8ae7bdf0edb6134584e9fc
 - name: github.com/Sirupsen/logrus
   version: 3ec0642a7fb6488f65b06f9040adc67e3990296a
+- name: github.com/valyala/bytebufferpool
+  version: e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7
 - name: github.com/valyala/fasthttp
   version: 95be7a58499b79d1a42a4e9880fb90645345c021
+  subpackages:
+  - fasthttputil
 - name: github.com/valyala/fasttemplate
   version: 3b874956e03f1636d171bda64b130f9135f42cff
 - name: golang.org/x/net
