@@ -53,6 +53,7 @@ func Init() *echo.Echo {
 	v1 := e.Group("/api/v1")
 	{
 		v1.POST("/snippet/create", api.Create())
+		v1.POST("/preview", api.Preview())
 	}
 	return e
 }
