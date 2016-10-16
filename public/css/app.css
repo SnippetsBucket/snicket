@@ -28,3 +28,17 @@ html {
 .snippet-container .control:not(:last-child) {
     margin-bottom: 20px;
 }
+
+.is-editor-active {
+  display: none;
+}
+
+.is-preview-active {
+  display: none;
+}
+
+.preview-area {
+  border: solid 1px #ccc;
+  padding: 20px;
+  border-radius: 3px;
+}

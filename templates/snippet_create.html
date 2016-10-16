@@ -5,32 +5,38 @@
   <div class="container">
     <div class="snippet-container">
       <h3 class="title is-3">Create snippet</h3>
-      <form action="/api/v1/snippet/create" method="POST">
-        <p class="control">
-          <input class="input is-medium" name="snippetTitle" type="text" placeholder="Title input">
-        </p>
-        <div class="tabs is-boxed">
-          <ul>
-            <li class="is-active">
-              <a>
-                <span class="icon is-small"><img src="assets/icon/markdown.svg"></span>
-                <span>Content</span>
-              </a>
-            </li>
-            <li>
-              <a>
-                <span class="icon is-small"><i class="fa fa-eye"></i></span>
-                <span>Preview</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="control">
-          <textarea class="textarea snippet-editor" name="snippetText" placeholder="snippet description..."></textarea>
-        </div>
-        <button type=submit class="button is-success is-medium">Post Snippet</button>
-      </form>
+      <div id="md-editor">
+        <form action="/api/v1/snippet/create" method="POST">
+          <p class="control">
+            <input class="input is-medium" name="snippetTitle" type="text" placeholder="Title input">
+          </p>
+          <div class="tabs is-boxed">
+            <ul>
+              <li v-bind:class="{ 'is-active': isActiveEditor }" v-on:click="dispMarkdownEditor">
+                <a>
+                  <span class="icon is-small"><img src="assets/icon/markdown.svg"></span>
+                  <span>Content</span>
+                </a>
+              </li>
+              <li v-bind:class="{ 'is-active': isActivePreview }" v-on:click="markdownPreview">
+                <a>
+                  <span class="icon is-small"><i class="fa fa-eye"></i></span>
+                  <span>Preview</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="control">
+            <textarea v-model="markdownInputSrc" class="textarea snippet-editor" v-bind:class="{ 'is-preview-active': !isActiveEditor }" name="snippetText" placeholder="snippet description..."></textarea>
+            <div class="preview-area markdown-body" v-bind:class="{ 'is-editor-active': !isActivePreview }" v-html="parsedMarkdown"></div>
+          </div>
+          <button type=submit class="button is-success is-medium">Post Snippet</button>
+        </form>
+      </div>
     </div>
   </div>
+  {{ range .Js }}
+    <script src="assets/dist/{{ . }}"></script>
+  {{ end }}
 </body>
 {{ end }}

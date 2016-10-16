@@ -53,11 +53,14 @@ export default {
 
   resolve: {
     extensions: ['', '.js'],
+    alias: {
+      'vue$': 'vue/dist/vue.js'
+    }
   },
 
   module: {
     loaders: [
-      { test: /\.js?$/, include: [path.resolve(__dirname, 'app/assets/js')], loader: 'babel' },
+      { test: /\.js?$/, include: [path.resolve(__dirname, 'assets/js')], loader: 'babel' },
     ],
   },
 

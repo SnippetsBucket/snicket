@@ -5,6 +5,11 @@ import (
 	"github.com/valyala/fasthttp"
 )
 
+type PageInfo struct {
+	Title string
+	Js    []string
+}
+
 func JSONHTTPErrorHandler(err error, c echo.Context) {
 	code := fasthttp.StatusInternalServerError
 	msg := "Internal Server Error"
@@ -21,13 +26,25 @@ func JSONHTTPErrorHandler(err error, c echo.Context) {
 }
 
 func Home(c echo.Context) error {
-	return c.Render(fasthttp.StatusCreated, "home", "Hello")
+	pageInfo := PageInfo{
+		"Home",
+		[]string{"create.bundle.js"},
+	}
+	return c.Render(fasthttp.StatusCreated, "home", pageInfo)
 }
 
 func Snippet(c echo.Context) error {
-	return c.Render(fasthttp.StatusCreated, "snippet", "Hello")
+	pageInfo := PageInfo{
+		"Snippet",
+		[]string{"create.bundle.js"},
+	}
+	return c.Render(fasthttp.StatusCreated, "snippet", pageInfo)
 }
 
 func SnippetCreate(c echo.Context) error {
-	return c.Render(fasthttp.StatusCreated, "snippet_create", "Hello")
+	pageInfo := PageInfo{
+		"Create a new snippet",
+		[]string{"create.bundle.js"},
+	}
+	return c.Render(fasthttp.StatusCreated, "snippet_create", pageInfo)
 }
