@@ -1,16 +1,16 @@
-hash: 2258227a2480f0e8ab52833c542abaab3009882c4a9e5c78061cd1692830e015
-updated: 2016-09-30T01:13:29.594421911+09:00
+hash: 640f42cd6bcd3fb6387c3633926340bec54aac1b6475569e09b645fe12c4f25e
+updated: 2016-10-19T00:25:04.397076059+09:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 24c63f56522a87ec5339cc3567883f1039378fdb
 - name: github.com/go-sql-driver/mysql
   version: 0b58b37b664c21f3010e836f1b931e1d0b0b0685
 - name: github.com/gocraft/dbr
-  version: 2f5790f739c41bfaae11cb14738a07ac85491193
+  version: 10fa49bf1ee63a0f822283ef9805d818f9e84742
   subpackages:
   - dialect
 - name: github.com/klauspost/compress
-  version: d0763f13d86e630f5d3ea9fa848a6ecc68255297
+  version: d79e91e68b50915127b49fbb88f450e2ca63c18a
   subpackages:
   - flate
   - gzip
@@ -18,9 +18,9 @@ imports:
 - name: github.com/klauspost/cpuid
   version: 09cded8978dc9e80714c4d85b0322337b0a1e5e0
 - name: github.com/klauspost/crc32
-  version: 19b0b332c9e4516a6370a0456e6182c3b5036720
+  version: cb6bfca970f6908083f26f39a79009d608efd5cd
 - name: github.com/labstack/echo
-  version: 9c0e9d689f87624ad01748b1a963d356afbfdceb
+  version: 1dcb7ba9ab8030aeb23e6e4d893a3efe0dc3d7a7
   subpackages:
   - engine/standard
   - middleware
@@ -35,29 +35,47 @@ imports:
   - color
   - random
 - name: github.com/mattn/go-colorable
-  version: 5da554b8d30ea210af19ee14a058919661bf0d04
+  version: 6c903ff4aa50920ca86087a280590b36b3152b9c
 - name: github.com/mattn/go-isatty
   version: 66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8
+- name: github.com/microcosm-cc/bluemonday
+  version: f77f16ffc87a6a58814e64ae72d55f9c41374e6d
 - name: github.com/russross/blackfriday
-  version: 35eb537633d9950afc8ae7bdf0edb6134584e9fc
+  version: 5f33e7b7878355cd2b7e6b8eefc48a5472c69f70
+- name: github.com/sergi/go-diff
+  version: e99546f7e59c6986f3d896432c10ab94f01a6bfa
+  subpackages:
+  - diffmatchpatch
+- name: github.com/shurcooL/github_flavored_markdown
+  version: 7bcab912380835dc7e26c88ca09acaf97941c87f
+- name: github.com/shurcooL/highlight_diff
+  version: d3b292edd8c8311b9d264e3adc26cdf39695fe9b
+- name: github.com/shurcooL/highlight_go
+  version: 7867c2dec5d03326c952ca98eda2abf907ddfcf3
 - name: github.com/shurcooL/sanitized_anchor_name
   version: 1dba4b3954bc059efc3991ec364f9f9a35f597d2
 - name: github.com/Sirupsen/logrus
   version: 3ec0642a7fb6488f65b06f9040adc67e3990296a
+- name: github.com/sourcegraph/annotate
+  version: f4cad6c6324d3f584e1743d8b3e0e017a5f3a636
+- name: github.com/sourcegraph/syntaxhighlight
+  version: c95ac474b7cb9c711f4591b553a2caaa24ea3d37
 - name: github.com/valyala/bytebufferpool
   version: e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7
 - name: github.com/valyala/fasthttp
-  version: b43280dfe8ade44056e0179593f8ab30f82a7f47
+  version: 8ab3351f0af23b2deb030cf055f76711169372bb
   subpackages:
   - fasthttputil
 - name: github.com/valyala/fasttemplate
   version: 3b874956e03f1636d171bda64b130f9135f42cff
 - name: golang.org/x/net
-  version: 9f0e377a8a39bb99ff03459d77c135a0042878f0
+  version: 8b4af36cd21a1f85a7484b49feb7c79363106d8e
   subpackages:
+  - html
   - context
+  - html/atom
 - name: golang.org/x/sys
-  version: 8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9
+  version: 002cbb5f952456d0c50e0d2aff17ea5eca716979
   subpackages:
   - unix
 devImports: []

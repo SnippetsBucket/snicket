@@ -9,3 +9,4 @@ import:
   - engine/standard
   - middleware
 - package: github.com/russross/blackfriday
+- package: github.com/shurcooL/github_flavored_markdown
