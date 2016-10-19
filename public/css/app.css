@@ -2,6 +2,10 @@ html {
   background-color: #fff;
 }
 
+ul {
+    list-style: inherit;
+}
+
 .nav {
   border-bottom: 1px solid #ccc;
 }
@@ -21,7 +25,7 @@ html {
 }
 
 .snippet-container .snippet-editor {
-  height: 400px;
+  height: 450px;
   resize: vertical;
 }
 
@@ -39,6 +43,6 @@ html {
 
 .preview-area {
   border: solid 1px #ccc;
-  padding: 20px;
+  padding: 35px;
   border-radius: 3px;
 }

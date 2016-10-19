@@ -1,8 +1,6 @@
 package model
 
-import (
-	"github.com/russross/blackfriday"
-)
+import "github.com/shurcooL/github_flavored_markdown"
 
 type (
 	PreviewJson struct {
@@ -15,7 +13,7 @@ type (
 )
 
 func ParseMarkdown(rq *PreviewJson) string {
-	b := blackfriday.MarkdownCommon([]byte(rq.Markdown))
+	b := github_flavored_markdown.Markdown([]byte(rq.Markdown))
 	return string(b)
 }
 
