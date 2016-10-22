@@ -3,7 +3,7 @@ html {
 }
 
 ul {
-    list-style: inherit;
+  list-style: inherit;
 }
 
 .nav {
@@ -45,4 +45,24 @@ ul {
   border: solid 1px #ccc;
   padding: 35px;
   border-radius: 3px;
+}
+
+.markdown-body table td[align=left] {
+  text-align: left;
+}
+
+.markdown-body table td[align=right] {
+  text-align: right;
+}
+
+.markdown-body table td[align=center] {
+  text-align: center;
+}
+
+/*
+ * snippet
+ */
+
+.menu-list {
+  list-style: none;
 }
