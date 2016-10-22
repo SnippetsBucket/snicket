@@ -6,4 +6,4 @@ CREATE TABLE snippets (
   created_at datetime NOT NULL,
   updated_at datetime NOT NULL,
   PRIMARY KEY (snippet_id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
