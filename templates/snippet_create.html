@@ -8,7 +8,7 @@
       <div id="md-editor">
         <form action="/api/v1/snippet/create" method="POST">
           <p class="control">
-            <input class="input is-medium" name="snippetTitle" type="text" placeholder="Title input">
+            <input class="input is-medium" name="snippetTitle" type="text" v-model="snippetTitle" placeholder="Title input">
           </p>
           <div class="tabs is-boxed">
             <ul>
@@ -30,7 +30,7 @@
             <textarea v-model="markdownInputSrc" class="textarea snippet-editor" v-bind:class="{ 'is-preview-active': !isActiveEditor }" name="snippetText" placeholder="snippet description..."></textarea>
             <div class="preview-area markdown-body" v-bind:class="{ 'is-editor-active': !isActivePreview }" v-html="parsedMarkdown"></div>
           </div>
-          <button type=submit class="button is-success is-medium">Post Snippet</button>
+          <button type=button class="button is-success is-medium" v-on:click="vPostSnippet">Post Snippet</button>
         </form>
       </div>
     </div>

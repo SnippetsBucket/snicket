@@ -7,6 +7,7 @@ class Markdown extends Vue {
       delimiters: ['${', '}'],
       el: '#md-editor',
       data: {
+        snippetTitle: '',
         markdownInputSrc: '',
         parsedMarkdown: '',
         isActiveEditor: true,
@@ -18,6 +19,9 @@ class Markdown extends Vue {
         },
         dispMarkdownEditor: () => {
           this.switchActiveEditor(true);
+        },
+        vPostSnippet: () => {
+          this.postSnippet();
         }
       }
     };
@@ -47,6 +51,23 @@ class Markdown extends Vue {
     this.isActivePreview = !switchFlg;
   }
 
+  postSnippet() {
+    axios({
+      method: 'post',
+      url: '/api/v1/snippet/create',
+      headers: {'Content-Type': 'application/json'},
+      data: {
+        snippetTitle: this.snippetTitle,
+        snippetText: this.markdownInputSrc
+      }
+    })
+    .then(res => {
+      location.href = "/";
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
 }
 
 
