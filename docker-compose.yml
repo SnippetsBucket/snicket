@@ -1,19 +1,25 @@
 version: '2'
 
 services:
-
-  mysql-server:
-    image: mysql:5.7
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: my-secret-pw
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_CHARSET: utf8mb4
-      MYSQL_DATABASE: snicket
+  app:
+    build: .docker/web
     ports:
-      - 3306:3306
+      - 5000:5000
+    links:
+      - mongo
     volumes:
-    - mysql57-data:/var/lib/mysql
+      - .:/go/src/github.com/SnippetsBucket/snicket
+    command: bash -c 'cd /go/src/github.com/SnippetsBucket/snicket/ && go run server.go'
+    container_name: snicket-web
+
+  mongo:
+    image: mongo:3.4.0
+    ports:
+    - 27017:27017
+    volumes:
+    - mongo-data:/data/db
+    container_name: snicket-mongo
 
 volumes:
-  mysql57-data:
+  mongo-data:
     driver: local

@@ -8,5 +8,5 @@ import (
 
 func main() {
 	router := router.Init()
-	router.Run(standard.New(":8888"))
+	router.Run(standard.New(":5000"))
 }
